@@ -1,0 +1,274 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 6,
+    "passes": 2,
+    "pending": 0,
+    "failures": 4,
+    "start": "2025-07-01T17:31:40.155Z",
+    "end": "2025-07-01T17:32:58.277Z",
+    "duration": 78122,
+    "testsRegistered": 6,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8a7d9fdf-7954-439d-bdba-fd7db4be1326",
+      "title": "",
+      "fullFile": "cypress\\e2e\\uiTest.cy.js",
+      "file": "cypress\\e2e\\uiTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6f182e41-76fd-4b03-9c8a-18da9058138e",
+          "title": "Validate User is Register",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User is able to login",
+              "fullTitle": "Validate User is Register Verify User is able to login",
+              "timedOut": null,
+              "duration": 8834,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\uiTest.cy.js\\\\Validate User is Register -- Verify User is able to login (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.fixture('Testdata').then(registerUserdata => {\n  const loginobj = new _Login.default();\n  loginobj.clickLogin();\n  loginobj.setUserName(registerUserdata.UserName);\n  loginobj.setPassword(registerUserdata.UserPassword);\n  cy.logger('application', \"Entered User Details-->Login Test\");\n  loginobj.clickLoginbtn();\n  loginobj.verifyLoginSuccessMsg(registerUserdata.loginmsg);\n  cy.logger('application', \"Validated success Login Msg-->Login Test\");\n  const loadTime = Date.now() - startTime;\n  cy.logger('performance', `TotalTime taken to LoginUser: ${loadTime}ms`);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h5#logInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#logInModalLabel.modal-title>` is not visible because its parent `<div#logInModal.modal.fade.show>` has CSS property: `opacity: 0`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h5#logInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#logInModalLabel.modal-title>` is not visible because its parent `<div#logInModal.modal.fade.show>` has CSS property: `opacity: 0`\n    at Login.clickLogin (webpack://cypressframework/./cypress/PageClass/Login.js:11:37)\n    at Context.eval (webpack://cypressframework/./cypress/e2e/TestLogin.cy.js:18:32)",
+                "diff": null
+              },
+              "uuid": "0f6bb48c-482f-4944-968f-a6fa789f7e85",
+              "parentUUID": "6f182e41-76fd-4b03-9c8a-18da9058138e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0f6bb48c-482f-4944-968f-a6fa789f7e85"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8834,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "bb805d44-c9e3-4fb9-8ab7-9841827464a1",
+          "title": "Validate User is Register",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify User is able to signup",
+              "fullTitle": "Validate User is Register Verify User is able to signup",
+              "timedOut": null,
+              "duration": 11757,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\uiTest.cy.js\\\\Validate User is Register -- Verify User is able to signup (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.fixture('Testdata').then(registerUserdata => {\n  const SignUpobj = new _SignUp.default();\n  SignUpobj.clickSignUp();\n  SignUpobj.setUserName(registerUserdata.UserName + Math.floor(Math.random() * 101));\n  SignUpobj.setPassword(registerUserdata.UserPassword);\n  cy.logger('application', 'Entered User details-->SignUp Test');\n  SignUpobj.clickSubmit();\n  SignUpobj.verifySuccessMsg(registerUserdata.expectedsignupMsg);\n  cy.logger('application', 'Verified User SignUp-->SignUp Test');\n  const loadTime = Date.now() - startTime;\n  cy.logger('performance', `TotalTime taken to registerUser: ${loadTime}ms`);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h5#signInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#signInModalLabel.modal-title>` is not visible because its parent `<div#signInModal.modal.fade.show>` has CSS property: `opacity: 0`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h5#signInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#signInModalLabel.modal-title>` is not visible because its parent `<div#signInModal.modal.fade.show>` has CSS property: `opacity: 0`\n    at SignUp.clickSignUp (webpack://cypressframework/./cypress/PageClass/SignUp.js:11:38)\n    at Context.eval (webpack://cypressframework/./cypress/e2e/TestSignup.cy.js:20:33)",
+                "diff": null
+              },
+              "uuid": "44cf86f4-ded9-4f3c-af0c-eedc15856327",
+              "parentUUID": "bb805d44-c9e3-4fb9-8ab7-9841827464a1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify User Exist message",
+              "fullTitle": "Validate User is Register Verify User Exist message",
+              "timedOut": null,
+              "duration": 11317,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\uiTest.cy.js\\\\Validate User is Register -- Verify User Exist message (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.fixture('Testdata').then(registerUserdata => {\n  const SignUpobj = new _SignUp.default();\n  SignUpobj.clickSignUp();\n  SignUpobj.setUserName(registerUserdata.UserName);\n  SignUpobj.setPassword(registerUserdata.UserPassword);\n  SignUpobj.clickSubmit();\n  SignUpobj.verifyUserexist(registerUserdata.userExistMsg);\n  cy.logger('application', \"Verify User Exist message\");\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h5#signInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#signInModalLabel.modal-title>` is not visible because its parent `<div#signInModal.modal.fade.show>` has CSS property: `opacity: 0`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h5#signInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#signInModalLabel.modal-title>` is not visible because its parent `<div#signInModal.modal.fade.show>` has CSS property: `opacity: 0`\n    at SignUp.clickSignUp (webpack://cypressframework/./cypress/PageClass/SignUp.js:11:38)\n    at Context.eval (webpack://cypressframework/./cypress/e2e/TestSignup.cy.js:36:33)",
+                "diff": null
+              },
+              "uuid": "fa6092c0-c1a3-43a9-bb26-87603413b224",
+              "parentUUID": "bb805d44-c9e3-4fb9-8ab7-9841827464a1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Invalid Data message",
+              "fullTitle": "Validate User is Register Verify Invalid Data message",
+              "timedOut": null,
+              "duration": 9031,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\uiTest.cy.js\\\\Validate User is Register -- Verify Invalid Data message (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.fixture('Testdata').then(registerUserdata => {\n  const SignUpobj = new _SignUp.default();\n  SignUpobj.clickSignUp();\n  SignUpobj.clickSubmit();\n  SignUpobj.verifyUserexist(registerUserdata.InvalidDataMsg);\n  cy.logger('application', \"Verify Invalid Data message\");\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h5#signInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#signInModalLabel.modal-title>` is not visible because its parent `<div#signInModal.modal.fade.show>` has CSS property: `opacity: 0`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h5#signInModalLabel.modal-title>' to be 'visible'\n\nThis element `<h5#signInModalLabel.modal-title>` is not visible because its parent `<div#signInModal.modal.fade.show>` has CSS property: `opacity: 0`\n    at SignUp.clickSignUp (webpack://cypressframework/./cypress/PageClass/SignUp.js:11:38)\n    at Context.eval (webpack://cypressframework/./cypress/e2e/TestSignup.cy.js:49:33)",
+                "diff": null
+              },
+              "uuid": "82e8b856-705a-469a-ba68-f02b57529ea4",
+              "parentUUID": "bb805d44-c9e3-4fb9-8ab7-9841827464a1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "44cf86f4-ded9-4f3c-af0c-eedc15856327",
+            "fa6092c0-c1a3-43a9-bb26-87603413b224",
+            "82e8b856-705a-469a-ba68-f02b57529ea4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 32105,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "219f6b0e-fb9b-4128-8316-e78f1c526b41",
+          "title": "Validate Data Displayed on MonitorPage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate Price and Monitor Name is correct",
+              "fullTitle": "Validate Data Displayed on MonitorPage Validate Price and Monitor Name is correct",
+              "timedOut": null,
+              "duration": 8131,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('monitor').then(data => {\n  const loginobj = new _Login.default();\n  loginobj.clickLogin();\n  loginobj.setUserName(data.UserName);\n  loginobj.setPassword(data.UserPassword);\n  cy.logger('application', \"Entered User Details-->Login Test\");\n  loginobj.clickLoginbtn();\n  loginobj.verifyLoginSuccessMsg(data.loginmsg);\n  cy.logger('application', \"Validated success Login Msg-->Login Test\");\n  const monitorobj = new _Monitor.default();\n  monitorobj.isMonitorDisplayed();\n  monitorobj.ValidateMonitor1(data.monitor1);\n  monitorobj.Validatemonitor1Price(data.m1Price);\n  monitorobj.ValidateMonitor2(data.monitor2);\n  monitorobj.Validatemonitor2Price(data.m2Price);\n  const loadTime = Date.now() - startTime;\n  cy.logger('performance', `TotalTime taken to ValidateMonitor's: ${loadTime}ms`);\n});",
+              "err": {},
+              "uuid": "1ac0bcc2-d5df-4248-828e-9efed3899285",
+              "parentUUID": "219f6b0e-fb9b-4128-8316-e78f1c526b41",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1ac0bcc2-d5df-4248-828e-9efed3899285"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8131,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "3249ef22-ab0b-4856-be14-4e88a8b7432c",
+          "title": "Validate User is able to make Purchase",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate Add Product",
+              "fullTitle": "Validate User is able to make Purchase Validate Add Product",
+              "timedOut": null,
+              "duration": 22292,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\uiTest.cy.js\\\\Validate User is able to make Purchase -- Validate Add Product.png\",\n      \"\\\\uiTest.cy.js\\\\Validate User is able to make Purchase -- Validate Add Product (1).png\",\n      \"\\\\uiTest.cy.js\\\\OrderPurchased.png\"\n    ]\n  ]\n}",
+              "code": "cy.viewport(1920, 1080);\ncy.fixture('product').then(data => {\n  const loginobj = new _Login.default();\n  loginobj.clickLogin();\n  loginobj.setUserName(data.UserName);\n  loginobj.setPassword(data.UserPassword);\n  cy.logger('application', \"Entered User Details-->Login Test\");\n  loginobj.clickLoginbtn();\n  loginobj.verifyLoginSuccessMsg(data.loginmsg);\n  cy.logger('application', \"Validated success Login Msg-->Login Test\");\n  const prdobj = new _AddProduct.default();\n  prdobj.addProduct();\n  prdobj.enterName(data.name);\n  prdobj.entercountry(data.Country);\n  prdobj.entercity(data.City);\n  prdobj.entercard(data.Creditcard);\n  prdobj.entermonth(data.Month);\n  prdobj.enteryear(data.Year);\n  prdobj.clickPurchase();\n  prdobj.validateOrder();\n  const loadTime = Date.now() - startTime;\n  cy.logger('performance', `TotalTime taken to Purchase Product: ${loadTime}ms`);\n});",
+              "err": {},
+              "uuid": "83f2ea48-dc4f-4313-b6b6-3b40d1721986",
+              "parentUUID": "3249ef22-ab0b-4856-be14-4e88a8b7432c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "83f2ea48-dc4f-4313-b6b6-3b40d1721986"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22292,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/UIReport",
+        "overwrite": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}
